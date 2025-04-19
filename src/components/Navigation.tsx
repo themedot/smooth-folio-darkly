@@ -3,13 +3,23 @@ import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLocation, useNavigate } from "react-router-dom";
 
+/**
+ * Navigation component that provides site-wide navigation with smooth scrolling
+ * and routing capabilities. Includes theme toggle and responsive design.
+ */
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
   const navigate = useNavigate();
   
+  // Check if we're on the home page to determine scroll behavior
   const isHomePage = location.pathname === "/";
 
+  /**
+   * Handles navigation between sections.
+   * On home page: Smoothly scrolls to the section
+   * On other pages: Navigates to home page with hash for section
+   */
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     
@@ -82,3 +92,4 @@ export function Navigation() {
     </nav>
   );
 }
+

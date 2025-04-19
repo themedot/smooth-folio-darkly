@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
 
-## Project info
+# Modern Portfolio Template
 
-**URL**: https://lovable.dev/projects/ba69accc-160b-4a2f-98f4-df484377a79e
+A modern, responsive portfolio template built with React, TypeScript, and Tailwind CSS. Perfect for developers, designers, and creatives looking to showcase their work with a sleek and professional online presence.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 🌓 Dark/Light theme toggle
+- 📱 Fully responsive design
+- 🎨 Modern UI with smooth animations
+- 🧩 Modular component architecture
+- 📝 Blog section
+- 🎯 Project showcase
+- 📬 Contact form
+- 🚀 Fast performance
+- 🔍 SEO friendly
+- 🛠️ Easy to customize
 
-**Use Lovable**
+## Quick Start
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ba69accc-160b-4a2f-98f4-df484377a79e) and start prompting.
+1. Install dependencies:
+```bash
+npm install
+```
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+3. Build for production:
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Customization
 
-**Use GitHub Codespaces**
+### Changing Content
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Personal Information**
+   - Navigate to `src/pages/Index.tsx`
+   - Update the hero section with your name and description
+   - Modify the about section with your details
 
-## What technologies are used for this project?
+2. **Projects**
+   - Add your projects in the projects section
+   - Include project images, descriptions, and links
 
-This project is built with:
+3. **Blog Posts**
+   - Customize blog posts in the blog section
+   - Add your own content and images
 
-- Vite
-- TypeScript
+### Styling
+
+- Theme colors can be modified in `src/index.css`
+- Component styles use Tailwind CSS classes
+- Layout adjustments can be made in individual component files
+
+### Components
+
+The template includes several reusable components:
+- Navigation
+- ThemeToggle
+- Project Cards
+- Blog Posts
+- Contact Form
+
+## Dependencies
+
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
+- shadcn/ui
+- React Router
+- React Query
+- Lucide Icons
 
-## How can I deploy this project?
+## Browser Support
 
-Simply open [Lovable](https://lovable.dev/projects/ba69accc-160b-4a2f-98f4-df484377a79e) and click on Share -> Publish.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-## Can I connect a custom domain to my Lovable project?
+## Credits
 
-Yes, you can!
+Built with:
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT License - feel free to use this template for your personal or commercial projects.
+
