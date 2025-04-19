@@ -1,15 +1,27 @@
 
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  const isHomePage = location.pathname === "/";
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    
+    if (isHomePage) {
+      // On home page, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // On other pages, navigate back to home with section hash
+      navigate(`/#${sectionId}`);
     }
   };
 
