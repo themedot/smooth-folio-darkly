@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -6,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const { toast } = useToast();
@@ -86,9 +86,11 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   A brief description of the project and its main features.
                 </p>
-                <Button variant="outline" className="w-full">
-                  View Project
-                </Button>
+                <Link to={`/project/${project}`}>
+                  <Button variant="outline" className="w-full">
+                    View Project
+                  </Button>
+                </Link>
               </Card>
             ))}
           </div>
@@ -106,9 +108,11 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   A preview of the blog post content goes here.
                 </p>
-                <Button variant="ghost" className="w-full">
-                  Read More
-                </Button>
+                <Link to={`/blog/${post}`}>
+                  <Button variant="ghost" className="w-full">
+                    Read More
+                  </Button>
+                </Link>
               </Card>
             ))}
           </div>
