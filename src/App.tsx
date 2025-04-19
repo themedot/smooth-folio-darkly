@@ -4,11 +4,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "./providers/ThemeProvider";
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
 import ProjectPage from "./pages/ProjectPage";
 import BlogPost from "./pages/BlogPost";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/project/:id" element={<ProjectPage />} />
             <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Toaster />
           <Sonner />
