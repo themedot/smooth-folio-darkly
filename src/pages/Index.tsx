@@ -132,13 +132,37 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Blog</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((post) => (
-              <Card key={post} className="p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-semibold mb-2">Blog Post {post}</h3>
+            {[
+              {
+                id: 1,
+                title: "Blog Post 1",
+                description: "A preview of the blog post content goes here.",
+                image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&auto=format&fit=crop"
+              },
+              {
+                id: 2,
+                title: "Blog Post 2",
+                description: "A preview of the blog post content goes here.",
+                image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&auto=format&fit=crop"
+              },
+              {
+                id: 3,
+                title: "Blog Post 3",
+                description: "A preview of the blog post content goes here.",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop"
+              }
+            ].map((post) => (
+              <Card key={post.id} className="p-6 hover:shadow-lg transition-shadow">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="mb-4 rounded-md object-cover w-full h-40"
+                />
+                <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
                 <p className="text-muted-foreground mb-4">
-                  A preview of the blog post content goes here.
+                  {post.description}
                 </p>
-                <Link to={`/blog/${post}`}>
+                <Link to={`/blog/${post.id}`}>
                   <Button variant="ghost" className="w-full">
                     Read More
                   </Button>
