@@ -31,6 +31,12 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-16">
         <div className="text-center space-y-6">
+          <img
+            src="/demo-preview.jpg"
+            alt="Portfolio preview"
+            className="mx-auto mb-6 rounded-lg shadow-lg max-w-xs md:max-w-md"
+            style={{ objectFit: "cover" }}
+          />
           <h1 className="text-4xl md:text-6xl font-bold">
             Hi, I'm <span className="text-primary">John Doe</span>
           </h1>
