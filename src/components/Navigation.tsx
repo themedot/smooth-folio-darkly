@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLocation, useNavigate } from "react-router-dom";
+import { MobileMenu } from "./MobileMenu";
 
 /**
  * Navigation component that provides site-wide navigation with smooth scrolling
@@ -11,7 +12,7 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Check if we're on the home page to determine scroll behavior
   const isHomePage = location.pathname === "/";
 
@@ -22,7 +23,7 @@ export function Navigation() {
    */
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
-    
+
     if (isHomePage) {
       // On home page, scroll to section
       const element = document.getElementById(sectionId);
@@ -40,7 +41,8 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <span className="text-xl font-bold">Portfolio</span>
-          <div className="flex items-center space-x-8">
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("home")}
               className={`transition-colors hover:text-primary ${
@@ -86,6 +88,11 @@ export function Navigation() {
               Contact
             </button>
             <ThemeToggle />
+          </div>
+          {/* Mobile hamburger menu */}
+          <div className="flex md:hidden items-center gap-3">
+            <ThemeToggle />
+            <MobileMenu onNavigate={scrollToSection} />
           </div>
         </div>
       </div>
