@@ -86,13 +86,37 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((project) => (
-              <Card key={project} className="p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-semibold mb-2">Project {project}</h3>
+            {[
+              {
+                id: 1,
+                title: "Project 1",
+                description: "A brief description of the project and its main features.",
+                image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&auto=format&fit=crop"
+              },
+              {
+                id: 2,
+                title: "Project 2",
+                description: "A brief description of the project and its main features.",
+                image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&auto=format&fit=crop"
+              },
+              {
+                id: 3,
+                title: "Project 3",
+                description: "A brief description of the project and its main features.",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop"
+              }
+            ].map((project) => (
+              <Card key={project.id} className="p-6 hover:shadow-lg transition-shadow">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="mb-4 rounded-md object-cover w-full h-40"
+                />
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">
-                  A brief description of the project and its main features.
+                  {project.description}
                 </p>
-                <Link to={`/project/${project}`}>
+                <Link to={`/project/${project.id}`}>
                   <Button variant="outline" className="w-full">
                     View Project
                   </Button>
