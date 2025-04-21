@@ -1,6 +1,8 @@
 
 # Modern Portfolio Template
 
+![Portfolio Template Demo](public/demo-preview.jpg)
+
 ## Overview
 A modern, responsive portfolio template built with React, TypeScript, and Tailwind CSS. Perfect for developers, designers, and creatives looking to showcase their work.
 
@@ -68,3 +70,4 @@ MIT License - Feel free to use for personal or commercial projects.
 
 ## Support
 For issues or customization requests, please open an issue on the repository.
+
